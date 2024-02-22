@@ -7,14 +7,24 @@ use App\Models\kategoribuku;
 
 class PostKategoriController extends Controller
 {
+
+    public function index()
+    {
+
+        $data_kategori=kategoribuku::get(); 
+
+        return  view('private.post.kategori', compact('data_kategori'));
+        
+    }
+
     public function store(Request $request)
     {
 
         $data_kategori = new kategoribuku();
 
-        $data_buku->NamaKategori = $request->NamaKategori;
-        $data_buku->save();
+        $data_kategori->NamaKategori = $request->NamaKategori;
+        $data_kategori->save();
         
-        return view('private.post.create');
+        return view('home');
     }
 }

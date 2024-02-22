@@ -65,20 +65,26 @@
                                 Pinjam Buku
                             </div>
                             <div class="card-body">
-                              <form method="POST" action="" enctype="multipart/form-data">
+                              <form method="POST" action="{{ route('store/pj') }}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Tanggal Peminjaman</label>
-                                  <input type="date" class="form-control" id="exampleInputEmail1" name="TanggalPeminjaman">
+                                  <label for="1" class="form-label">Tanggal Peminjaman</label>
+                                  <input type="date" class="form-control" id="1" name="TanggalPeminjaman">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Tanggal Pengembalian</label>
-                                    <input type="date" class="form-control" id="exampleInputEmail1" name="TanggalPengembalian">
+                                    <label for="2" class="form-label">Tanggal Pengembalian</label>
+                                    <input type="date" class="form-control" id="2" name="TanggalPengembalian">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Status Peminjaman</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="StatusPeminjaman">
+                                    <label for="3" class="form-label">Status Peminjaman</label>
+                                    <select class="form-select multiple select example" id="3" name="StatusPeminjaman">
+                                        <option selected>Pilih Status</option>
+                                        <option value="1">Baik</option>
+                                        <option value="2">Masa Tunguu</option>
+                                        <option value="3">Terlambat</option>
+                                    </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-outline-primary">Submit</button>
                               </form>
                             </div>
                         </div>

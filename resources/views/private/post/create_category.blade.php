@@ -65,12 +65,13 @@
                                 Input Kategori Buku
                             </div>
                             <div class="card-body">
-                              <form method="POST" action="" enctype="multipart/form-data">
+                              <form method="POST" action="{{ route('store/kg') }}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Kategori Buku</label>
-                                  <input type="text" class="form-control" id="exampleInputEmail1" name="NamaKategori">
+                                  <input type="text" class="form-control" id="exampleInputEmail1" name="NamaKategori"  required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-outline-primary">Submit</button>
                               </form>
                             </div>
                         </div>

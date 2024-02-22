@@ -65,24 +65,27 @@
                                 Input Buku
                             </div>
                             <div class="card-body">
-                              <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
+                              <form method="POST" action="{{ route('store/buku') }}" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Judul</label>
-                                  <input type="text" class="form-control" id="exampleInputEmail1" name="Judul">
+                                  <input type="text" class="form-control" id="exampleInputEmail1" name="Judul" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="penulis" class="form-label">Penulis</label>
-                                  <input type="text" class="form-control" id="penulis" name="Penulis">
+                                  <input type="text" class="form-control" id="penulis" name="Penulis" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="exampleInputPassword1" class="form-label">Penerbit</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" name="Penerbit">
+                                  <input type="text" class="form-control" id="exampleInputPassword1" name="Penerbit" required>
                                 </div>
                                 <div class="mb-3">
                                   <label for="exampleInputPassword1" class="form-label">Tahun Terbit</label>
-                                  <input type="text" class="form-control" id="exampleInputPassword1" name="TahunTerbit">
+                                  <input type="text" class="form-control" id="exampleInputPassword1" name="TahunTerbit" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                                <button type="reset" class="btn btn-outline-danger">Reset</button>
+
                               </form>
                             </div>
                         </div>

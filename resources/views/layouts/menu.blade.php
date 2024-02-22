@@ -10,18 +10,14 @@ Input Buku Baru
 Input Kategori Buku Baru
 </a>
 
-<a class="nav-link collapsed" href="{{ url('/peminjaman') }}">
-<div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-Pinjam Buku
-</a>
-
-<a class="nav-link collapsed" href="{{ url('/ulasan') }}">
-<div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-Ulasan Buku
-</a>
 
 <a class="nav-link collapsed" href="/index">
     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
     Lihat Buku
+</a>
+
+<a class="nav-link collapsed" href="{{ url('/kategori') }}">
+    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+    Lihat Data Kategori
 </a>
 </div>

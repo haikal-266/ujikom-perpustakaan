@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white pb-4 shadow">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/index') }}">
                     Perpustakaan Digital
@@ -41,7 +41,7 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
@@ -52,8 +52,8 @@
                                 </li>
                             @endif
                         @else
-                                <div class="nav-item">
-                                    <a class="" href="{{ route('logout') }}"
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
@@ -62,8 +62,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
-                            </li>
+                                </li>
+                            
                         @endguest
                     </ul>
                 </div>
@@ -73,9 +73,10 @@
         <main class="py-4">
             @yield('content')
         </main>
-    
-
-
+        
     </div>
+
+    
 </body>
+
 </html>

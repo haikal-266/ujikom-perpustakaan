@@ -2,38 +2,40 @@
 
 @section('content')
 
-<div class="container-sm">
+<div class="container-sm pt-5">
     <div class="col-xl col-">
-        <div class="card bg-  mb-4 mt-3">
-            <div class="card-body">Pinjam Buku</div>
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Input Buku Baru</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text- stretched-link" href="/peminjaman">View Details</a>
-                <div class="small "><i class="fas fa-angle-right"></i></div>
+                <a class="small text-white stretched-link" href="/create_buku">Menuju Kesana</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
 </div>
 
 <div class="container-">
     <div class="col-xl col-">
-        <div class="card bg-  mb-4 mt-3">
-            <div class="card-body">Lihat Buku</div>
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Input Kategori Buku</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text- stretched-link" href="/index">View Details</a>
-                <div class="small "><i class="fas fa-angle-right"></i></div>
+                <a class="small text-white stretched-link" href="/create_kg">Menuju Kesana</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
 </div>
 
 <div class="container-">
     <div class="col-xl col-">
-        <div class="card bg-  mb-4 mt-3">
-            <div class="card-body">Ulas Buku</div>
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">Lihat Koleksi Buku</div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text- stretched-link" href="/ulasan">View Details</a>
-                <div class="small "><i class="fas fa-angle-right"></i></div>
+                <a class="small text-white stretched-link" href="/index">Menuju Kesana</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
 </div>
+
+
 
 @endsection
 

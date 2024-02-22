@@ -58,54 +58,59 @@
                         <h1 class="mt-4">Perpustakaan Digital</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
-                        </ol>                      
+                        </ol>  
+                        
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 List Buku
                             </div>
-                            <table class="table">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
-                                </tbody>
-                              </table>
+
+                            @foreach ($data_buku as $data )
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Id Buku</th>
+                                        <th scope="col">Judul</th>
+                                        <th scope="col">Penulis</th>
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Tahun Terbit</th>
+                                        <th colspan="4" scope="col" class="center">Menu</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th class="justify-content-centre" scope="row">{{ $data->BukuID }}</th>
+                                        <td>{{ $data->Judul  }}</td>
+                                        <td>{{ $data->Penulis }}</td>
+                                        <td>{{ $data->Penerbit }}</td>
+                                        <td>{{ $data->TahunTerbit }}</td>
+                                        <td>
+                                            
+                                            <button class="btn btn-outline-success">Edit</button>
+
+                                            {{-- <form action="{{ route('delete/buku', BukuID) }}" method="post">
+                                                @csrf
+                                                @method('DELETE') --}}
+                                                    <button class="btn btn-outline-danger ml-5">Hapus</button>
+                                            {{-- </form> --}}
+
+                                            <a href="{{ url('/ulasan') }}" rel="noopener noreferrer">
+                                                <button class="btn btn-outline-warning ml-5">Ulas</button>
+                                            </a>
+                                            <a href="{{ url('/peminjaman') }}"  rel="noopener noreferrer">
+                                                <button class="btn btn-outline-dark ml-5">Pinjam</button>
+                                            </a>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            @endforeach                           
                         </div>
                     </div>
                 </main>

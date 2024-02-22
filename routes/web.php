@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.post.home');
 });
 
-Route::get('/index', function () {
-    return view('private.post.index');
-});
+// Route::get('/admin', function () {
+//     return view('home');
+// });
 
 Route::get('/create_buku', function () {
     return view('private.post.create');
@@ -27,6 +29,11 @@ Route::get('/create_buku', function () {
 Route::get('/create_kg', function () {
     return view('private.post.create_category');
 });
+
+Route::get('/kategori', function () {
+    return view('private.post.kategori');
+});
+
 Route::get('/peminjaman', function () {
     return view('private.post.peminjaman');
 });
@@ -35,17 +42,25 @@ Route::get('/ulasan', function () {
 });
 
 
+// Backend
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/store', [App\Http\Controllers\PostBukuController::class, 'store'])->name('store');
+Route::get('/index', [App\Http\Controllers\PostBukuController::class, 'index'])->name('index');
+
+Route::get('/kategori', [App\Http\Controllers\PostKategoriController::class, 'index'])->name('kategori');
 
 Route::post('/store/buku', [App\Http\Controllers\PostBukuController::class, 'store'])->name('store/buku');
 
-Route::post('/store/kg', [App\Http\Controllers\PostKategoriController::class, 'store'])->name('store/kg');
+// Route::delete('/delete/buku/{BukuID}', [App\Http\Controllers\PostBukuController::class, 'delete'])->name('delete/buku');
 
 Route::post('/store/pj', [App\Http\Controllers\PostPeminjamanController::class, 'store'])->name('store/pj');
+
+
+Route::post('/store/kg', [App\Http\Controllers\PostKategoriController::class, 'store'])->name('store/kg');
+
 
 Route::post('/store/ulasan', [App\Http\Controllers\PostUlasanController::class, 'store'])->name('store/ulasan');
 
