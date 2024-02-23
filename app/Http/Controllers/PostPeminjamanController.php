@@ -20,18 +20,18 @@ class PostPeminjamanController extends Controller
     // }
 
 
-    public function store(Request $request)
+    public function store($id)
     {
         
         $pinjam = new peminjaman();
 
-        $pinjam->UserID = Auth()->user()->id;
+        $pinjam->UserID = Auth::user()->id;
         $pinjam->BukuID = $request->BukuID;
         $pinjam->TanggalPeminjaman = $request->TanggalPeminjaman;
         $pinjam->TanggalPengembalian = $request->TanggalPengembalian;
         $pinjam->StatusPeminjaman = $request->StatusPeminjaman;
         $pinjam->save();
 
-        return view('private.post.peminjaman');
+        return view('private.post.peminjaman',  ['peminjaman' => $peminjaman[0]]);
     }
 }

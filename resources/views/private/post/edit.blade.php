@@ -17,26 +17,41 @@
             <a class="navbar-brand ps-3" href="/index">Perpustakaan Digital</a>
                     </div>
                     <div class="sb-sidenav-footer">
+                      
                     </div>
                 </nav>
             </div>
          <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4 pb-1">Ulasan Buku</h1>    
-                        <hr>            
+                        <h1 class="mt-4 pb">Edit Buku | {{ $book->Judul }}</h1>  
+                        <hr>                   
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Berikan Ulasan Anda
+                                Masukan Kembali Data Yang Ingin Dirubah
                             </div>
                             <div class="card-body">
-                              <form method="POST" action="" enctype="multipart/form-data">
+                              <form method="POST" action="/buku/edit/" enctype="multipart/form-data">
                                 @csrf
-                                <label for="exampleInputPassword1" class="form-label">Tahun Terbit</label>
-                                {{-- @method('put') --}}
+                                @method('put')
                                 <div class="mb-3">
-                                  <textarea name="Ulasan" id="" cols="120" rows="10"></textarea>                                </div>
+                                  <label for="exampleInputEmail1" class="form-label">Judul</label>
+                                  <input type="text" class="form-control" id="exampleInputEmail1" name="Judul" value="{{ $book->Judul }}" required>
+                                  <input type="hidden" class="form-control" id="exampleInputEmail1" name="id" value="{{ $book->BukuID }}" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="2" class="form-label">Penulis</label>
+                                  <input type="text" class="form-control" id="2" name="Penulis" value="{{ $book->Penulis }}" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">Penerbit</label>
+                                  <input type="text" class="form-control" id="exampleInputPassword1" value="{{ $book->Penerbit }}" name="Penerbit" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInputPassword1" class="form-label">Tahun Terbit</label>
+                                  <input type="text" class="form-control" id="exampleInputPassword1" value="{{ $book->TahunTerbit }}" name="TahunTerbit" required>
+                                </div>
                                 <button type="submit" class="btn btn-outline-primary">Submit</button>
                                 <button type="reset" class="btn btn-outline-danger">Reset</button>
 

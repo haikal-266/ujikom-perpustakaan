@@ -66,10 +66,8 @@
                                 <i class="fas fa-table me-1"></i>
                                 List Buku
                             </div>
-
-                            @foreach ($data_buku as $data )
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th scope="col">Id Buku</th>
@@ -80,6 +78,8 @@
                                         <th colspan="4" scope="col" class="center">Menu</th>
                                     </tr>
                                     </thead>
+
+                                    @foreach ($data_buku as $data )
                                     <tbody>
                                     <tr>
                                         <th class="justify-content-centre" scope="row">{{ $data->BukuID }}</th>
@@ -88,29 +88,42 @@
                                         <td>{{ $data->Penerbit }}</td>
                                         <td>{{ $data->TahunTerbit }}</td>
                                         <td>
-                                            
-                                            <button class="btn btn-outline-success">Edit</button>
 
-                                            {{-- <form action="{{ route('delete/buku', BukuID) }}" method="post">
-                                                @csrf
-                                                @method('DELETE') --}}
-                                                    <button class="btn btn-outline-danger ml-5">Hapus</button>
-                                            {{-- </form> --}}
 
-                                            <a href="{{ url('/ulasan') }}" rel="noopener noreferrer">
-                                                <button class="btn btn-outline-warning ml-5">Ulas</button>
-                                            </a>
-                                            <a href="{{ url('/peminjaman') }}"  rel="noopener noreferrer">
-                                                <button class="btn btn-outline-dark ml-5">Pinjam</button>
-                                            </a>
+                                            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Opsi
+                                              </button>
+                                              <ul class="dropdown-menu">
+                                                <li> <a class="dropdown-item" href="/buku/edit/{{ $data->BukuID }}">
+                                                    <button class="btn btn-outline-success">Edit</button>
+                                                </a></li>
+                                                <li><a class="dropdown-item" href="/buku/ulas/{{ $data->BukuID }}" rel="noopener noreferrer">
+                                                    <button class="btn btn-outline-warning">Ulas</button>
+                                                </a></li>
+                                                <li><a class="dropdown-item" href="{{ url('/peminjaman') }}"  rel="noopener noreferrer">
+                                                    <button class="btn btn-outline-dark">Pinjam</button>
+                                                </a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><form class="dropdown-item" action="{{ route('buku/destroy', $data->BukuID) }}" onclick="return confirm('Apakah anda yakin ingin menghapus data buku {{ $data->Judul  }}?')" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                        <button class="btn btn-outline-danger">Hapus</button>
+                                                </form></li>
+                                              </ul>
+                                            </div>
+
                                             
+                                           
+                                            
+                                            
+
                                         </td>
                                     </tr>
                                     <tr>
                                     </tbody>
+                                    @endforeach  
                                 </table>
                             </div>
-                            @endforeach                           
                         </div>
                     </div>
                 </main>

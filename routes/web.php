@@ -54,9 +54,17 @@ Route::get('/kategori', [App\Http\Controllers\PostKategoriController::class, 'in
 
 Route::post('/store/buku', [App\Http\Controllers\PostBukuController::class, 'store'])->name('store/buku');
 
+Route::get('/buku/edit/{id}', [App\Http\Controllers\PostBukuController::class, 'edit'])->name('buku/edit');
+
+Route::put('/buku/edit/', [App\Http\Controllers\PostBukuController::class, 'Update'])->name('buku/update');
+
+Route::get('/buku/ulas/{id}', [App\Http\Controllers\PostUlasanController::class, 'ulas'])->name('buku/ulas');
+
+Route::delete('/buku/destroy/{id}', [App\Http\Controllers\PostBukuController::class, 'destroy'])->name('buku/destroy');
+
 // Route::delete('/delete/buku/{BukuID}', [App\Http\Controllers\PostBukuController::class, 'delete'])->name('delete/buku');
 
-Route::post('/store/pj', [App\Http\Controllers\PostPeminjamanController::class, 'store'])->name('store/pj');
+Route::post('/store/pj/{id}', [App\Http\Controllers\PostPeminjamanController::class, 'store'])->name('store/pj');
 
 
 Route::post('/store/kg', [App\Http\Controllers\PostKategoriController::class, 'store'])->name('store/kg');

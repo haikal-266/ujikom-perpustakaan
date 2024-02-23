@@ -65,7 +65,9 @@
                                 Pinjam Buku
                             </div>
                             <div class="card-body">
-                              <form method="POST" action="{{ route('store/pj') }}" enctype="multipart/form-data">
+
+
+                              <form method="POST" action="{{ route('store/pj', $peminjaman->BukuID) }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                   <label for="1" class="form-label">Tanggal Peminjaman</label>
@@ -80,7 +82,7 @@
                                     <select class="form-select multiple select example" id="3" name="StatusPeminjaman">
                                         <option selected>Pilih Status</option>
                                         <option value="1">Baik</option>
-                                        <option value="2">Masa Tunguu</option>
+                                        <option value="2">Masa Tungu</option>
                                         <option value="3">Terlambat</option>
                                     </select>
                                 </div>

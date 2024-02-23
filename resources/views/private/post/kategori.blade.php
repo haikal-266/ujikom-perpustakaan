@@ -67,15 +67,15 @@
                                 List Kategori Buku
                             </div>
 
-                            @foreach ($data_kategori as $data )
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th scope="col">Id Kategori</th>
                                         <th scope="col">Nama Kategori</th>
                                     </tr>
                                     </thead>
+                                    @foreach ($data_kategori as $data )
                                     <tbody>
                                     <tr>
                                         <th class="justify-content-centre" scope="row">{{ $data->KategoriID }}</th>
@@ -83,12 +83,9 @@
                                     </tr>
                                     <tr>
                                     </tbody>
+                                    @endforeach                           
                                 </table>
-                            </div>
-                            @endforeach                           
-                            
-                        
-                            
+                            </div>                            
                         </div>
                     </div>
                 </main>

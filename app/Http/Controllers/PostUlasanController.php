@@ -7,17 +7,11 @@ use App\Models\ulasanbuku;
 
 class PostUlasanController extends Controller
 {
-    public function store(Request $request)
+    public function ulas($id)
     {
 
-        $data_buku = new buku();
-
-        $data_buku->Judul = $request->Judul;
-        $data_buku->Penulis = $request->Penulis;
-        $data_buku->Penerbit = $request->Penerbit;
-        $data_buku->TahunTerbit = $request->TahunTerbit;
-        $data_buku->save();
+        $ulasan = ulasanbuku::where('BukuID', $id)->get();
+        return view('private.post.ulasan', compact('ulasan'));
         
-        return view('private.post.create');
     }
 }
